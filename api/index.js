@@ -1,9 +1,11 @@
 const express = require ('express')
+const mongoos = require('mongoose')
 const dotenv = require('dotenv')
 
 
 dotenv.config()
 
+mongoos.connect(process.env.MONGO_URL)
 
 const app = express()
 
