@@ -1,6 +1,6 @@
 import {useState, React} from 'react'
 
-const [username, setUsername] = useState('')
+const [, setUsername] = useState('')
 const [password, setPassword] = useState('')
 
 const Login = () => {
@@ -15,7 +15,7 @@ const Login = () => {
     <form className='w-64 mx-auto '>
 
       <input 
-      value={username} 
+      value={name} 
       onChange={ev => setUsername(ev.target.value)} 
       className='mb-5' 
       placeholder='Email' 

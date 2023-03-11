@@ -12,7 +12,7 @@ return (
     </div>
 
     <div className='mt-16'>
-    <form className='w-64 mx-auto'>
+    <form onSubmit={register} className='w-64 mx-auto'>
       
       <input className='mb-5' placeholder='Name' type="name" id="name" name="name" required />
 
