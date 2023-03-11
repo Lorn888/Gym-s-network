@@ -13,10 +13,10 @@ function App() {
           <img src={logo} alt='logo' className='w-28 object-contain ' />
         </Link>
         <div style={{ display: 'flex' }}>
-          <Link to='/login' className='font-inter font-medium bg-[#6469ff] text-white px-4 py-2 rounded-md'>
+          <Link to='/login' className='font-inter font-medium bg-[#45718C] text-white px-4 py-2 rounded-md'>
             Login
           </Link>
-          <Link to='/signup' className='font-inter font-medium bg-[#6469ff] text-white px-4 py-2 rounded-md ml-4'>
+          <Link to='/signup' className='font-inter font-medium bg-[#45718C] text-white px-4 py-2 rounded-md ml-4'>
             Signup
           </Link>
         </div>
