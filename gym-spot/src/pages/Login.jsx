@@ -11,11 +11,9 @@ const Login = () => {
     <div className='mt-16'>
     <form>
 
-      <label htmlFor="email">Email:</label>
-      <input type="email" id="email" name="email" required />
+      <input placeholder='Email' type="email" id="email" name="email" required />
   
-      <label htmlFor="password">Password:</label>
-      <input type="password" id="password" name="password" required />
+      <input placeholder='Password' type="password" id="password" name="password" required />
   
       
       <input type="submit" value="Submit" className='font-inter font-medium bg-[#45718C] text-white px-4 py-2 rounded-md ml-4'/>
