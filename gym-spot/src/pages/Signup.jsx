@@ -12,13 +12,13 @@ return (
     </div>
 
     <div className='mt-16'>
-    <form onSubmit={register} className='w-64 mx-auto'>
+    <form>
       
-      <input className='mb-5' placeholder='Name' type="name" id="name" name="name" required />
+      <input placeholder='Name' type="name" id="name" name="name" required />
 
-      <input className='mb-5' placeholder= "Email"type="email" id="email" name="email" required />
+      <input placeholder= "Email"type="email" id="email" name="email" required />
   
-      <input className='mb-5' placeholder= "Password" type="password" id="password" name="password" required />
+      <input placeholder= "Password" type="password" id="password" name="password" required />
   
       
       <input type="submit" value="Submit" className='font-inter font-medium bg-[#45718C] text-white px-4 py-2 rounded-md ml-4'/>
