@@ -1,9 +1,6 @@
 import React, { useState, useEffect } from 'react'
-import { Card, FormField } from '../components'
  
-const Login = () => {
-const [Card, setCard] = useState(true)    
-const [Field, setField] = useState(false)
+const Signup = () => {
 return (
   <section className='max-w-7xl mx-auto'>
     <div>
@@ -29,4 +26,4 @@ return (
 )
 }
 
-export default Login
+export default Signup
