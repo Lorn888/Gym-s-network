@@ -26,6 +26,9 @@ mongoose.connect(process.env.MONGODB_URI, {
   console.error(error);
 });
 
+// Mount the authentication router
+app.use('/auth', authRouter);
+
 // Start the server
 const port = process.env.PORT || 5001;
 app.listen(port, () => {
