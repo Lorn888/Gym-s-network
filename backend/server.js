@@ -1,6 +1,7 @@
 require('dotenv').config()
 
 const express = require ('express')
+const gymRatInfoRoutes = require ('./routes/gym-rat-i')
 
 //express app
 const app = express()
@@ -11,9 +12,8 @@ app.use((req,res,next) =>{
     next()
 })
 
-app.get('/', (req,res) => {
-    res.json({msg: 'Welcome to my gym-social-app'})
-})
+//handler
+app.use(gymRatInfoRoutes)
 
 //listen for requests
 app.listen(process.env.PORT, () => {
