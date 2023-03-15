@@ -7,6 +7,10 @@ const gymRatInfoRoutes = require ('./routes/gym-rat-i')
 const app = express()
 
 //middleware
+
+//attatches body from the requests to request object
+app.use(express.json())
+
 app.use((req,res,next) =>{
     console.log(req.path, req.method)
     next()

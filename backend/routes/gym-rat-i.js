@@ -24,7 +24,7 @@ router.delete('/:id', (req, res) => {
 
 
 //Updates member info
-router.patch('/', (req, res) => {
+router.patch('/:id', (req, res) => {
     res.json({mssg:'Updates members info'})
 })
 
