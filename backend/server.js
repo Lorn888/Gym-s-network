@@ -13,7 +13,7 @@ app.use((req,res,next) =>{
 })
 
 //handler
-app.use(gymRatInfoRoutes)
+app.use('/api/gym-rat-i', gymRatInfoRoutes)
 
 //listen for requests
 app.listen(process.env.PORT, () => {
