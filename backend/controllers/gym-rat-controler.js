@@ -1,6 +1,11 @@
 const Gym_rat_info = require('../models/gym-rat-info-models')
 
 //Get all gym rat info
+const getGRI = async (req,res) => {
+    const gri = await  Gym_rat_info.find({}).sort({createdAt: -1})    //blank curly brackets finds
+
+    res.status(200).json(gri)
+} 
 
 //Get a single rat info
 
