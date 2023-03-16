@@ -1,32 +1,34 @@
-const mongoose = require ('mongoose')
+const mongoose = require("mongoose");
 
 //creating a new schema
-const Schema = mongoose.Schema
+const Schema = mongoose.Schema;
 
-const ratInfoSchema = new Schema({
+const ratInfoSchema = new Schema(
+  {
     sex: {
-        type: String,
-        required: true
+      type: String,
+      required: true,
     },
     experiance: {
-        type: Number,
-        required: true
+      type: Number,
+      required: true,
     },
     age: {
-        type: Number,
-        required: true
+      type: Number,
+      required: true,
     },
     weight: {
-        type: Number,
-        required: true
+      type: Number,
+      required: true,
     },
     height: {
-        type: Number,
-        required: true
-    }
-    
-}, { timestamp: true })
+      type: Number,
+      required: true,
+    },
+  },
+  { timestamp: true }
+);
 
-module.exports = mongoose.model('Gym_rat_info', ratInfoSchema)
+module.exports = mongoose.model("Gym_rat_info", ratInfoSchema);
 
 //Gym_rat_info.find()
