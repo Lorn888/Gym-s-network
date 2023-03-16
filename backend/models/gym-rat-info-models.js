@@ -9,7 +9,7 @@ const ratInfoSchema = new Schema({
         required: true
     },
     experiance: {
-        type: String,
+        type: Number,
         required: true
     },
     age: {
@@ -22,9 +22,9 @@ const ratInfoSchema = new Schema({
     },
     height: {
         type: Number,
-        required: True
+        required: true
     }
-
+    
 }, { timestamp: true })
 
 module.exports = mongoose.model('Gym_rat_info', ratInfoSchema)
