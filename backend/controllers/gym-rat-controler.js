@@ -1,4 +1,5 @@
 const Gym_rat_info = require("../models/gym-rat-info-models");
+const mongoose = require ('mongoose')
 
 //Get all gym rat info
 const getAllGRI = async (req, res) => {
@@ -10,6 +11,10 @@ const getAllGRI = async (req, res) => {
 //Get a single rat info
 const getGRI = async (req, res) => {
   const { id } = req.params;
+
+  if (!mongoose.Types.ObjectId.isValid(id)) {
+    return res.status(403).json({error: 'No such gym rat'})
+  }
 
   const gri = await Gym_rat_info.findById(id);
 
