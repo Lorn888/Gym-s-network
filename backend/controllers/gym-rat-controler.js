@@ -45,7 +45,7 @@ const createGRI = async (req, res) => {
 };
 //Delete member info
 const deleteGRI = async (req, res) => {
-  const { id } = req.res.params;
+  const { id } = req.params;
   if (!mongoose.Types.ObjectId.isValid(id)) {
     return res.status(403).json({ error: "No such gym rat" });
   }
@@ -60,10 +60,27 @@ const deleteGRI = async (req, res) => {
 };
 
 //Update member info
+const updateGRI = async (req, res) => {
+  const { id } = req.params;
+  if (!mongoose.Types.ObjectId.isValid(id)) {
+    return res.status(403).json({ error: "No such gym rat" });
+  }
+
+  const gri = await Gym_rat_info.findOneAndUpdate({_id:id}, {
+    ...req.body
+  })
+
+  if (!gri) {
+    return res.status(404).json({ error: "No such info" });
+  }
+  
+  res.status(200).json(gri)
+}
 
 module.exports = {
   createGRI,
   getAllGRI,
   getGRI,
-  deleteGrI
+  deleteGRI,
+  updateGRI
 };

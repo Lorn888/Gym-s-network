@@ -4,6 +4,8 @@ const {
   createGRI,
   getAllGRI,
   getGRI,
+  deleteGRI,
+  updateGRI
 } = require("../controllers/gym-rat-controler");
 
 //get all members info
@@ -16,13 +18,9 @@ router.get("/:id", getGRI)
 router.post("/", createGRI);
 
 //delets member info
-router.delete("/:id", (req, res) => {
-  res.json({ mssg: "Delets members info" });
-});
+router.delete("/:id", deleteGRI);
 
 //Updates member info
-router.patch("/:id", (req, res) => {
-  res.json({ mssg: "Updates members info" });
-});
+router.patch("/:id", updateGRI);
 
 module.exports = router;
