@@ -1,5 +1,5 @@
 const Gym_rat_info = require("../models/gym-rat-info-models");
-const mongoose = require ('mongoose')
+const mongoose = require("mongoose");
 
 //Get all gym rat info
 const getAllGRI = async (req, res) => {
@@ -13,7 +13,7 @@ const getGRI = async (req, res) => {
   const { id } = req.params;
 
   if (!mongoose.Types.ObjectId.isValid(id)) {
-    return res.status(403).json({error: 'No such gym rat'})
+    return res.status(403).json({ error: "No such gym rat" });
   }
 
   const gri = await Gym_rat_info.findById(id);
@@ -44,11 +44,26 @@ const createGRI = async (req, res) => {
   res.json({ mssg: "Post members info" });
 };
 //Delete member info
+const deleteGRI = async (req, res) => {
+  const { id } = req.res.params;
+  if (!mongoose.Types.ObjectId.isValid(id)) {
+    return res.status(403).json({ error: "No such gym rat" });
+  }
+
+  const gri = await Gym_rat_info.findOneAndDelete({ _id: id });
+
+  if (!gri) {
+    return res.status(404).json({ error: "No such info" });
+  }
+
+  res.status(200).json(gri);
+};
 
 //Update member info
 
 module.exports = {
   createGRI,
   getAllGRI,
-  getGRI
+  getGRI,
+  deleteGrI
 };
