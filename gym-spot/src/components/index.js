@@ -1,7 +1,5 @@
-import Card from "./Card";
-import FormField from "./FormField";
+import Navbar from "./Navbar";
 
-export {
-    Card,
-    FormField
+export {    
+    Navbar
 }
