@@ -2,7 +2,7 @@ import { useState } from "react";
 
 const GRIForm = () => {
   const [sex, setSex] = useState("");
-  const [experiance, setExperiance] = useState("");
+  const [experience, setExperience] = useState("");
   const [age, setAge] = useState("");
   const [weight, setWeight] = useState("");
   const [height, setHeight] = useState("");
@@ -11,7 +11,7 @@ const GRIForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const gri = { sex, experiance, age, weight, height };
+    const gri = { sex, experience, age, weight, height };
 
     const response = await fetch("http://192.168.0.229:7000/api/gym-rat-i", {
       method: "POST",
@@ -27,7 +27,7 @@ const GRIForm = () => {
     }
     if (response.ok) {
       setSex("");
-      setExperiance("");
+      setExperience("");
       setAge("");
       setWeight("");
       setHeight("");
@@ -37,61 +37,89 @@ const GRIForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <h3 className="text-[red] mt-11">Add your info</h3>
+   <form onSubmit={handleSubmit} className="max-w-sm mx-auto">
+  <h3 className="text-red-500 text-3xl mt-8 mb-4">Add Your Information</h3>
 
-      <div>
-        <label>Sex:</label>
-        <input
-          className="mt-16 border-radius 0px"
-          type="text"
-          onChange={(e) => setSex(e.target.value)}
-          value={sex}
-        />
-      </div>
+  <div className="mb-4">
+    <label className="block text-gray-700 font-bold mb-2" htmlFor="sex">
+      Sex:
+    </label>
+    <input
+      className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+      type="text"
+      id="sex"
+      placeholder="Enter your sex"
+      onChange={(e) => setSex(e.target.value)}
+      value={sex}
+    />
+  </div>
 
-      <div>
-        <label>Experiance:</label>
-        <input
-          type="text"
-          onChange={(e) => setExperiance(e.target.value)}
-          value={experiance}
-        />
-      </div>
+  <div className="mb-4">
+    <label className="block text-gray-700 font-bold mb-2" htmlFor="experience">
+      Experience:
+    </label>
+    <input
+      className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+      type="text"
+      id="experience"
+      placeholder="Enter your experience"
+      onChange={(e) => setExperience(e.target.value)}
+      value={experience}
+    />
+  </div>
 
-      <div>
-        <label>Age:</label>
-        <input
-          type="text"
-          onChange={(e) => setAge(e.target.value)}
-          value={age}
-        />
-      </div>
+  <div className="mb-4">
+    <label className="block text-gray-700 font-bold mb-2" htmlFor="age">
+      Age:
+    </label>
+    <input
+      className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+      type="text"
+      id="age"
+      placeholder="Enter your age"
+      onChange={(e) => setAge(e.target.value)}
+      value={age}
+    />
+  </div>
 
-      <div>
-        <label>Weight:</label>
-        <input
-          type="text"
-          onChange={(e) => setWeight(e.target.value)}
-          value={weight}
-        />
-      </div>
+  <div className="mb-4">
+    <label className="block text-gray-700 font-bold mb-2" htmlFor="weight">
+      Weight:
+    </label>
+    <input
+      className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+      type="text"
+      id="weight"
+      placeholder="Enter your weight"
+      onChange={(e) => setWeight(e.target.value)}
+      value={weight}
+    />
+  </div>
 
-      <div>
-        <label>Height:</label>
-        <input
-          type="text"
-          onChange={(e) => setHeight(e.target.value)}
-          value={height}
-        />
-      </div>
-      <button 
-      type="submit"
-      className="font-inter font-medium bg-[#45718C] text-white px-4 py-2 rounded-md ml-4">
-        Add info
-      </button>
-      {error && <div>{error}</div>}
-    </form>
+  <div className="mb-6">
+    <label className="block text-gray-700 font-bold mb-2" htmlFor="height">
+      Height:
+    </label>
+    <input
+      className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+      type="text"
+      id="height"
+      placeholder="Enter your height"
+      onChange={(e) => setHeight(e.target.value)}
+      value={height}
+    />
+  </div>
+
+  <button
+    type="submit"
+    className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+  >
+    Add Info
+  </button>
+
+  {error && <div className="text-red-500 mt-4">{error}</div>}
+</form>
+
   );
 };
 
