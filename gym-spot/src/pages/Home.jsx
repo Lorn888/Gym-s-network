@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { GRIDetails } from "../components";
+import { GRIDetails, GRIForm } from "../components";
 
 const Home = () => {
   const [gri, setGRI] = useState(null);
@@ -22,6 +22,9 @@ const Home = () => {
         gri.map((information) => (
           <GRIDetails key={information._id} information={information}/>
         ))}
+
+    <GRIForm/>
+    
     </div>
   );
 };

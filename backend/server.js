@@ -1,5 +1,6 @@
 require("dotenv").config();
 
+const cors = require('cors')
 const express = require("express");
 const mongoose = require("mongoose");
 const gymRatInfoRoutes = require("./routes/gym-rat-i");
@@ -8,10 +9,11 @@ const gymRatInfoRoutes = require("./routes/gym-rat-i");
 const app = express();
 
 //middleware
-app.use((req, res, next) => {
-  res.setHeader('Access-Control-Allow-Origin', 'http://192.168.0.229:5173');
-  next();
-});
+app.use(cors({
+  origin: '*',
+  allowedHeaders: ['Content-Type'],
+}));
+
 
 //attatches body from the requests to request object
 app.use(express.json());
