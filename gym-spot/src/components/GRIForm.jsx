@@ -2,7 +2,7 @@ import { useState } from "react";
 
 const GRIForm = () => {
   const [sex, setSex] = useState("");
-  const [experience, setExperience] = useState("");
+  const [experiance, setExperiance] = useState("");
   const [age, setAge] = useState("");
   const [weight, setWeight] = useState("");
   const [height, setHeight] = useState("");
@@ -11,7 +11,7 @@ const GRIForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const gri = { sex, experience, age, weight, height };
+    const gri = { sex, experiance, age, weight, height };
 
     const response = await fetch("http://192.168.0.229:7000/api/gym-rat-i", {
       method: "POST",
@@ -27,7 +27,7 @@ const GRIForm = () => {
     }
     if (response.ok) {
       setSex("");
-      setExperience("");
+      setExperiance("");
       setAge("");
       setWeight("");
       setHeight("");
@@ -55,16 +55,16 @@ const GRIForm = () => {
   </div>
 
   <div className="mb-4">
-    <label className="block text-gray-700 font-bold mb-2" htmlFor="experience">
-      Experience:
+    <label className="block text-gray-700 font-bold mb-2" htmlFor="experiance">
+      Experiance:
     </label>
     <input
       className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
       type="text"
-      id="experience"
-      placeholder="Enter your experience"
-      onChange={(e) => setExperience(e.target.value)}
-      value={experience}
+      id="experiance"
+      placeholder="Enter your experiance"
+      onChange={(e) => setExperiance(e.target.value)}
+      value={experiance}
     />
   </div>
 

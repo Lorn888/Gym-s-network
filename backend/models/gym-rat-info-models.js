@@ -9,7 +9,7 @@ const ratInfoSchema = new Schema(
       type: String,
       required: true,
     },
-    experience: {
+    experiance: {
       type: Number,
       required: true,
     },
