@@ -8,8 +8,8 @@ const GRIDetails = ({information}) => {
         </h4>
         <p>
             <strong>
-                experiance (years):
-            </strong> {information.experiance}
+                experience (years):
+            </strong> {information.experience}
         </p>
         <p>
             <strong>

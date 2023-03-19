@@ -27,12 +27,12 @@ const getGRI = async (req, res) => {
 
 //Create gym rat info
 const createGRI = async (req, res) => {
-  const { sex, experiance, age, weight, height } = req.body;
+  const { sex, experience, age, weight, height } = req.body;
 
   try {
     const gym_rat_info = await Gym_rat_info.create({
       sex,
-      experiance,
+      experience,
       age,
       weight,
       height,
