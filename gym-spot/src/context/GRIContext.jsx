@@ -21,13 +21,13 @@ export const griReducer = (state, action) => {
 export const GRIContextProvider = ({ children }) => {
   //wrap whatever part of the app needs the context
   const [state, dispatch] = useReducer(griReducer, {
-    gri: null,
+    gri: null
   });
 
   // dispatch({type: 'SET_GRI', payload: [{}, {}]}). <--Action
 
   return;
-  <GRIContext.Provider value={{ state, dispatch }}>
+  <GRIContext.Provider value={{ ...state, dispatch }}>
     {children}
   </GRIContext.Provider>;
 };

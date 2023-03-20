@@ -1,5 +1,7 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { GRIDetails, GRIForm } from "../components";
+import { useGriContext } from "../hooks/useGriContext";
+
 
 const Home = () => {
   const [gri, setGRI] = useState(null);
