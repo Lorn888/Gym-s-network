@@ -1,6 +1,8 @@
 import { useState } from "react";
+import { useGriContext } from "../hooks/useGriContext";
 
 const GRIForm = () => {
+  const {dispatch } = useGriContext()
   const [sex, setSex] = useState("");
   const [experiance, setExperiance] = useState("");
   const [age, setAge] = useState("");
@@ -33,6 +35,7 @@ const GRIForm = () => {
       setHeight("");
       setError(null);
       console.log("new info added");
+      dispatch({type: 'CREATE_GRI', payload: json})
     }
   };
 
