@@ -1,8 +1,6 @@
-import { useState } from 'react';
 import './App.css';
 import { Login, Signup, Home } from './pages';
 import { BrowserRouter, Link, Route, Routes } from 'react-router-dom';
-import { logo } from './assets';
 import { Navbar } from './components';
 
 function App() {

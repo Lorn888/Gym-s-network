@@ -1,10 +1,11 @@
-import { useEffect } from "react";
+import { useEffect,} from "react";
 import { GRIDetails, GRIForm } from "../components";
 import { useGriContext } from "../hooks/useGriContext";
 
 
 const Home = () => {
-  const [gri, setGRI] = useState(null);
+  
+  const {gri, dispatch} = useGriContext()
 
   useEffect(() => {
     const fetchGRI = async () => {
@@ -12,7 +13,7 @@ const Home = () => {
       const json = await response.json();
 
       if (response.ok) {
-        setGRI(json);
+        dispatch({type:'SET_GRI', payload: json})
       }
     };
     fetchGRI();

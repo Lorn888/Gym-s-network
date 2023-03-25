@@ -26,8 +26,9 @@ export const GRIContextProvider = ({ children }) => {
 
   // dispatch({type: 'SET_GRI', payload: [{}, {}]}). <--Action
 
-  return;
-  <GRIContext.Provider value={{ ...state, dispatch }}>
-    {children}
-  </GRIContext.Provider>;
+  return (
+    <GRIContext.Provider value={{ ...state, dispatch }}>
+      {children}
+    </GRIContext.Provider>
+  );
 };
