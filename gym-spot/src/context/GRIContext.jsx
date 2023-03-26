@@ -13,6 +13,10 @@ export const griReducer = (state, action) => {
       return {
         gri: [action.payload, ...state.gri],
       };
+      case 'DELETE_GRI':
+        return {
+        gri: state.gri.filter((w)=> w._id !== action.payload._id)
+        }
     default:
       return state;
   }
