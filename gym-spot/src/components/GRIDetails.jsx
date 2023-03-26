@@ -1,21 +1,22 @@
-import React from 'react'
-import { useGriContext } from '../hooks/useGriContext'
+import React from "react";
+import { useGriContext } from "../hooks/useGriContext";
 
-const GRIDetails = ({information}) => {
-  const { dispatch } = useGriContext()
-
+const GRIDetails = ({ information }) => {
+  const { dispatch } = useGriContext();
 
   const handleClick = async () => {
-    const response = await fetch('http://192.168.0.229:7000/api/gym-rat-i/' + information._id, {
-      method: 'DELETE'
-    })
-    const json = await response.json()
+    const response = await fetch(
+      "http://192.168.0.229:7000/api/gym-rat-i/" + information._id,
+      {
+        method: "DELETE",
+      }
+    );
+    const json = await response.json();
 
     if (response.ok) {
-       dispatch({type: 'DELETE_GRI', payload: json})
+      dispatch({ type: "DELETE_GRI", payload: json });
     }
-  }
-
+  };
 
   return (
     <div className="border border-gray-300 p-4 rounded-lg mb-4">
@@ -41,7 +42,7 @@ const GRIDetails = ({information}) => {
       <p className="text-gray-500 text-sm">{information.createdAt}</p>
       <span onClick={handleClick}>delete</span>
     </div>
-  )
-}
+  );
+};
 
-export default GRIDetails
+export default GRIDetails;

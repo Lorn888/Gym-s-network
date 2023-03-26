@@ -5,14 +5,14 @@ const {
   getAllGRI,
   getGRI,
   deleteGRI,
-  updateGRI
+  updateGRI,
 } = require("../controllers/gym-rat-controler");
 
 //get all members info
-router.get("/", getAllGRI)
+router.get("/", getAllGRI);
 
 //get a single members info
-router.get("/:id", getGRI)
+router.get("/:id", getGRI);
 
 //post member info
 router.post("/", createGRI);

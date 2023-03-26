@@ -46,19 +46,23 @@ const GRIForm = () => {
     <form onSubmit={handleSubmit} className="max-w-sm mx-auto">
       <h3 className="text-red-500 text-3xl mt-8 mb-4">Add Your Information</h3>
 
-      <div className={`mb-4 ${emptyFields.includes('sex') ? 'border-red-500' : ''}`}>
-  <label className="block text-gray-700 font-bold mb-2" htmlFor="sex">
-    Sex:
-  </label>
-  <input
-    className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-    type="text"
-    id="sex"
-    placeholder="Enter your sex"
-    onChange={(e) => setSex(e.target.value)}
-    value={sex}
-  />
-</div>
+      <div
+        className={`mb-4 ${
+          emptyFields.includes("sex") ? "border-red-500" : ""
+        }`}
+      >
+        <label className="block text-gray-700 font-bold mb-2" htmlFor="sex">
+          Sex:
+        </label>
+        <input
+          className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+          type="text"
+          id="sex"
+          placeholder="Enter your sex"
+          onChange={(e) => setSex(e.target.value)}
+          value={sex}
+        />
+      </div>
 
       <div className="mb-4">
         <label

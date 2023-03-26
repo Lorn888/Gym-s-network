@@ -29,25 +29,27 @@ const getGRI = async (req, res) => {
 const createGRI = async (req, res) => {
   const { sex, experiance, age, weight, height } = req.body;
 
-  let emptyFields = []
+  let emptyFields = [];
 
-  if(!sex) {
-    emptyFields.push('sex')
+  if (!sex) {
+    emptyFields.push("sex");
   }
-  if(!experiance) {
-    emptyFields.push('experiance')
+  if (!experiance) {
+    emptyFields.push("experiance");
   }
-  if(!age) {
-    emptyFields.push('age')
+  if (!age) {
+    emptyFields.push("age");
   }
-  if(!weight) {
-    emptyFields.push('weight')
+  if (!weight) {
+    emptyFields.push("weight");
   }
-  if(!height) {
-    emptyFields.push('height')
+  if (!height) {
+    emptyFields.push("height");
   }
-  if(emptyFields.length > 0) {
-    return res.status(400).json({error: 'Please fill in all the fields' , emptyFields})
+  if (emptyFields.length > 0) {
+    return res
+      .status(400)
+      .json({ error: "Please fill in all the fields", emptyFields });
   }
 
   try {
@@ -86,21 +88,24 @@ const updateGRI = async (req, res) => {
     return res.status(403).json({ error: "No such gym rat" });
   }
 
-  const gri = await Gym_rat_info.findOneAndUpdate({_id:id}, {
-    ...req.body
-  })
+  const gri = await Gym_rat_info.findOneAndUpdate(
+    { _id: id },
+    {
+      ...req.body,
+    }
+  );
 
   if (!gri) {
     return res.status(404).json({ error: "No such info" });
   }
-  
-  res.status(200).json(gri)
-}
+
+  res.status(200).json(gri);
+};
 
 module.exports = {
   createGRI,
   getAllGRI,
   getGRI,
   deleteGRI,
-  updateGRI
+  updateGRI,
 };
