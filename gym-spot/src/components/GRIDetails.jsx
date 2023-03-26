@@ -1,8 +1,8 @@
 import React from "react";
 import { useGriContext } from "../hooks/useGriContext";
 
-// date fns 
-import formatDistanceToNow from 'date-fns/formatDistanceToNow'
+// date fns
+import formatDistanceToNow from "date-fns/formatDistanceToNow";
 
 const GRIDetails = ({ information }) => {
   const { dispatch } = useGriContext();
@@ -42,7 +42,11 @@ const GRIDetails = ({ information }) => {
           </p>
         </div>
       </div>
-      <p className="text-gray-500 text-sm">{formatDistanceToNow(new Date(information.createdAt), {addSuffix: true})}</p>
+      <p className="text-gray-500 text-sm">
+        {formatDistanceToNow(new Date(information.createdAt), {
+          addSuffix: true,
+        })}
+      </p>
       <span onClick={handleClick}>delete</span>
     </div>
   );
