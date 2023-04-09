@@ -20,7 +20,7 @@ const Navbar = () => {
       <div style={{ display: "flex" }}>
         {user && (
           <div>
-            <span>{user.span}</span>
+            <span>{user.email}</span>
             <button
               className="font-inter font-medium bg-[#45718C] text-white px-4 py-2 rounded-md"
               onClick={handleClick}
