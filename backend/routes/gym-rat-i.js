@@ -7,7 +7,9 @@ const {
   deleteGRI,
   updateGRI,
 } = require("../controllers/gym-rat-controler");
+const requireAuth = require('../middleware/requireauth')
 
+router.use(requireAuth)
 //get all members info
 router.get("/", getAllGRI);
 
