@@ -1,8 +1,11 @@
 import { useState } from "react";
 import { useGriContext } from "../hooks/useGriContext";
+import {useAuthContext} from "../hooks/useAuthContext"
 
 const GRIForm = () => {
   const { dispatch } = useGriContext();
+	const {user} = useAuthContext()
+
   const [sex, setSex] = useState("");
   const [experiance, setExperiance] = useState("");
   const [age, setAge] = useState("");
@@ -13,6 +16,10 @@ const GRIForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if (!user) {
+      setError('You must be logged in')
+      return
+    }
 
     const gri = { sex, experiance, age, weight, height };
 
@@ -21,6 +28,8 @@ const GRIForm = () => {
       body: JSON.stringify(gri),
       headers: {
         "Content-Type": "application/json",
+        headers: { Authorization: `Bearer ${user.token}` },
+
       },
     });
     const json = await response.json();

@@ -13,7 +13,7 @@ const app = express();
 app.use(
   cors({
     origin: "*",
-    allowedHeaders: ["Content-Type"],
+    allowedHeaders: ["Content-Type", "Authorization"],
   })
 );
 
@@ -29,7 +29,7 @@ app.use((req, res, next) => {
 app.use("/api/gym-rat-i", gymRatInfoRoutes);
 app.use("/api/user", userRoutes);
 
-//connsect to db
+//connect to db
 mongoose
   .connect(process.env.MONGO_URI)
   .then(() => {
