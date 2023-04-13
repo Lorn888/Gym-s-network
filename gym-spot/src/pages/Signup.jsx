@@ -58,7 +58,7 @@ const Signup = () => {
           />
 
           <input
-          	disabled = {isLoading}
+            disabled={isLoading}
             type="submit"
             value="Submit"
             className="font-inter font-medium bg-[#45718C] text-white px-4 py-2 rounded-md ml-4"
