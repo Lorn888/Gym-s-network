@@ -3,21 +3,15 @@ import { useGriContext } from "../hooks/useGriContext";
 
 // date fns
 import formatDistanceToNow from "date-fns/formatDistanceToNow";
-import { useAuthContext } from "../hooks/useAuthContext";
 
 const GRIDetails = ({ information }) => {
   const { dispatch } = useGriContext();
-  const { user } = useAuthContext();
 
   const handleClick = async () => {
-    if (!user) {
-      return;
-    }
     const response = await fetch(
       "http://192.168.0.229:7000/api/gym-rat-i/" + information._id,
       {
         method: "DELETE",
-        headers: { Authorization: `Bearer ${user.token}` },
       }
     );
     const json = await response.json();
