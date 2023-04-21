@@ -28,9 +28,9 @@ const GRIForm = () => {
       body: JSON.stringify(gri),
       headers: {
         "Content-Type": "application/json",
-        headers: { Authorization: `Bearer ${user.token}` },
-
+        Authorization: `Bearer ${user.token}`
       },
+      
     });
     const json = await response.json();
 
